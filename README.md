@@ -77,10 +77,10 @@ npm test
 
 # Related links
 
- * Contribute: https://github.com/ovh/ovh-angular-toggleClass
- * Report bugs: https://github.com/ovh/ovh-angular-toggleClass/issues
+ * Contribute: https://github.com/ovh-ux/ovh-angular-toggleClass
+ * Report bugs: https://github.com/ovh-ux/ovh-angular-toggleClass/issues
  * Get latest version: https://github.com/ovh-ux/ ovh-angular-toggleClass
 
 # License
 
-See https://github.com/ovh/ovh-angular-toggleClass/blob/master/LICENSE
+See https://github.com/ovh-ux/ovh-angular-toggleClass/blob/master/LICENSE
