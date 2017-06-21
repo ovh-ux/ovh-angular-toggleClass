@@ -4,7 +4,7 @@
 
 Simple service need to run ovh control panel
 
-![deprecated](https://img.shields.io/badge/status-deprecated-red.svg) [![Build Status](https://travis-ci.org/ovh/ ovh-angular-toggleClass.svg)](https://travis-ci.org/ovh/ ovh-angular-toggleClass)
+(https://img.shields.io/badge/status-deprecated-red.svg) [![Build Status](https://travis-ci.org/ovh/ovh-angular-toggleClass.svg)](https://travis-ci.org/ovh/ovh-angular-toggleClass)
 
 ```javascript
 angular.module("myApp", [" ovh-angular-toggleClass"]);
