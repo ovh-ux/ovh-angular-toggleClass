@@ -58,7 +58,7 @@ angular.module("myApp", [" ovh-angular-toggleClass"]);
 ## Get the sources
 
 ```bash
-    git clone https://github.com/ovh/ovh-angular-toggleClass.git
+    git clone https://github.com/ovh-ux/ovh-angular-toggleClass.git
     cd  ovh-angular-toggleClass
     npm install
     bower install
@@ -79,7 +79,7 @@ npm test
 
  * Contribute: https://github.com/ovh-ux/ovh-angular-toggleClass
  * Report bugs: https://github.com/ovh-ux/ovh-angular-toggleClass/issues
- * Get latest version: https://github.com/ovh-ux/ ovh-angular-toggleClass
+ * Get latest version: https://github.com/ovh-ux/ovh-angular-toggleClass
 
 # License
 
