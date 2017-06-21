@@ -1,10 +1,12 @@
 ![OVH components](githubBanner.png)
 
-# ovh-angular-toggleClass
+# ovh-angular-toggleClass [![Chat on gitter](https://img.shields.io/gitter/room/ovh/ux.svg)](https://gitter.im/ovh/ux) 
 
 Simple service need to run ovh control panel
 
-[![Build Status](https://travis-ci.org/ovh/ovh-angular-toggleClass.svg)](https://travis-ci.org/ovh/ovh-angular-toggleClass)
+[![Maintenance](https://img.shields.io/maintenance/yes/2017.svg)]() [![Build Status](https://travis-ci.org/ovh/ovh-angular-toggleClass.svg)](https://travis-ci.org/ovh/ovh-angular-toggleClass)
+
+[![NPM](https://nodei.co/npm/ovh-angular-toggleclass.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ovh-angular-toggleclass/)
 
 ```javascript
 angular.module("myApp", [" ovh-angular-toggleClass"]);
@@ -47,11 +49,11 @@ angular.module("myApp", [" ovh-angular-toggleClass"]);
 
 ## Bower
 
-    bower install https://github.com/ovh-ux/ovh-angular-toggleClass.git --save
+    bower install ovh-angular-toggleclass --save
 
 ## NPM
 
-    npm install https://github.com/ovh-ux/ovh-angular-toggleClass.git --save
+    npm install ovh-angular-toggleclass --save
 
 ## Get the sources
 
