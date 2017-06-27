@@ -1,0 +1,51 @@
+<a href="https://github.com/ovh-ux/ovh-angular-toggleClass/blob/master/src/ovh-angular-toggleClass.directive.js#L26" class="view-source"><i class="icon-eye-open"> </i>View source</a><h1><code ng:non-bindable="">ovh-angular-toggleClass</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">ovh-angular-toggleClass</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="ovh-angular-toggleclass-directive-page ovh-angular-toggleclass-directive-ovh-angular-toggleclass-page"><p>To use ovh-angular-toggleClass, you had to inject ovh-angular-toggleClass as dependency and use it like this example inside a controller
+<pre class="prettyprint linenums">
+ angular.module("myApp", ['ovh-angular-toggleClass]);
+</pre>
+<p>Then, you can use the directive in your HTML code</p>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as element:<pre class="prettyprint linenums">&lt;ovh-angular-toggle-class
+       toggle-class-group="{string}"
+       toggle-class-side="{bool}"
+       toggle-class-target="{string}"
+       toggle-class-target-item="{string}"
+       [toggle-class-target-backdrop="{string}"]
+       [toggle-class-name="{string}"]
+       [toggle-class-trigger-close="{string}"]
+       toggle-class-trigger-open-close-event="{function}"
+       [toggle-class-click="{string}"]&gt;
+&lt;/ovh-angular-toggle-class&gt;</pre>
+as attribute<pre class="prettyprint linenums">&lt;ANY ovh-angular-toggle-class
+     toggle-class-group="{string}"
+     toggle-class-side="{bool}"
+     toggle-class-target="{string}"
+     toggle-class-target-item="{string}"
+     [toggle-class-target-backdrop="{string}"]
+     [toggle-class-name="{string}"]
+     [toggle-class-trigger-close="{string}"]
+     toggle-class-trigger-open-close-event="{function}"
+     [toggle-class-click="{string}"]&gt;
+   ...
+&lt;/ANY&gt;</pre>
+<h3 id="usage_directive-info">Directive info</h3>
+<div class="directive-info"><ul><li>This directive creates new scope.</li>
+</ul>
+</div>
+<h4 id="usage_directive-info_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>toggleClassGroup</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="ovh-angular-toggleclass-directive-page ovh-angular-toggleclass-directive-ovh-angular-toggleclass-page"><p>If no group, no auto remove by other ovh-angular-toggleClass</p>
+</div></td></tr><tr><td>toggleClassSide</td><td><a href="" class="label type-hint type-hint-bool">bool</a></td><td><div class="ovh-angular-toggleclass-directive-page ovh-angular-toggleclass-directive-ovh-angular-toggleclass-page"><p>If true slide up and down</p>
+</div></td></tr><tr><td>toggleClassTarget</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="ovh-angular-toggleclass-directive-page ovh-angular-toggleclass-directive-ovh-angular-toggleclass-page"><p>If no targer =&gt; next element of this element</p>
+</div></td></tr><tr><td>toggleClassTargetItem</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="ovh-angular-toggleclass-directive-page ovh-angular-toggleclass-directive-ovh-angular-toggleclass-page"><p>Description</p>
+</div></td></tr><tr><td>toggleClassTargetBackdrop <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="ovh-angular-toggleclass-directive-page ovh-angular-toggleclass-directive-ovh-angular-toggleclass-page"><p>Description</p>
+</div></td></tr><tr><td>toggleClassName <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="ovh-angular-toggleclass-directive-page ovh-angular-toggleclass-directive-ovh-angular-toggleclass-page"><p>Description</p>
+</div></td></tr><tr><td>toggleClassTriggerClose <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="ovh-angular-toggleclass-directive-page ovh-angular-toggleclass-directive-ovh-angular-toggleclass-page"><p>Description</p>
+</div></td></tr><tr><td>toggleClassTriggerOpenCloseEvent</td><td><a href="" class="label type-hint type-hint-function">function</a></td><td><div class="ovh-angular-toggleclass-directive-page ovh-angular-toggleclass-directive-ovh-angular-toggleclass-page"><p>event string that will trigger open and close</p>
+</div></td></tr><tr><td>toggleClassClick <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="ovh-angular-toggleclass-directive-page ovh-angular-toggleclass-directive-ovh-angular-toggleclass-page"><p>Code to execute on click</p>
+</div></td></tr></tbody></table></div>
+</div>
