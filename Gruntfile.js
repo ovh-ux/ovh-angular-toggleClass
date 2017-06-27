@@ -1,107 +1,145 @@
 module.exports = function (grunt) {
-    'use strict';
-    require('matchdep').filterAll('grunt-*').forEach(grunt.loadNpmTasks);
+    "use strict";
+    require("matchdep").filterAll("grunt-*").forEach(grunt.loadNpmTasks);
 
     grunt.initConfig({
-        pkg      : grunt.file.readJSON('package.json'),
-        bower    : grunt.file.readJSON('bower.json'),
-        distdir  : 'dist',
-        srcdir   : 'src',
-        builddir : '.work/.tmp',
+        pkg: grunt.file.readJSON("package.json"),
+        bower: grunt.file.readJSON("bower.json"),
+        distdir: "dist",
+        srcdir: "src",
+        builddir: ".work/.tmp",
 
         // Obfuscate
-        uglify   : {
-            js : {
-                options : {
-                    banner : '/*! <%= pkg.name %> - <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+        uglify: {
+            js: {
+                options: {
+                    banner: '/*! <%= pkg.name %> - <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */\n'
                 },
-                files   : {
-                    '<%= distdir %>/ovh-angular-toggleClass.min.js' : '<%= builddir %>/ovh-angular-toggleClass.js'
+                files: {
+                    "<%= distdir %>/ovh-angular-toggleClass.min.js": "<%= builddir %>/ovh-angular-toggleClass.js"
                 }
             }
         },
 
-        copy       : {
-            dist : {
-                files : [
+        copy: {
+            dist: {
+                files: [
                     {
-                        expand : true,
-                        cwd    : '<%= builddir %>',
-                        src    : 'ovh-angular-toggleClass.js',
-                        dest   : '<%= distdir %>/'
+                        expand: true,
+                        cwd: "<%= builddir %>",
+                        src: "ovh-angular-toggleClass.js",
+                        dest: "<%= distdir %>/"
                     },
                     {
-                        expand : true,
-                        cwd    : '<%= srcdir %>',
-                        src    : 'ovh-angular-toggleClass.html',
-                        dest   : '<%= distdir %>/'
+                        expand: true,
+                        cwd: "<%= srcdir %>",
+                        src: "ovh-angular-toggleClass.html",
+                        dest: "<%= distdir %>/"
                     }
                 ]
             }
         },
 
+        ngAnnotate: {
+            dist: {
+                files: {
+                    "<%= builddir %>/ovh-angular-toggleClass.js": ["<%= builddir %>/ovh-angular-toggleClass.js"]
+                }
+            }
+        },
+
         // Clean
-        clean      : {
-            dist : {
-                src : [
-                    '<%= builddir %>',
-                    '<%= distdir %>/*.js'
+        clean: {
+            dist: {
+                src: [
+                    "<%= builddir %>",
+                    "<%= distdir %>/*.js"
                 ]
             }
         },
 
         // JS Check
-        jshint     : {
-            options : {
-                jshintrc : '.jshintrc'
+        jshint: {
+            options: {
+                jshintrc: ".jshintrc"
             },
-            js      : [
-                '<%=srcdir%>/*.js',
-                '<%=srcdir%>/*/*.js',
-                '!<%=srcdir%>/*.spec.js'
+            js: [
+                "<%=srcdir%>/*.js",
+                "<%=srcdir%>/*/*.js",
+                "!<%=srcdir%>/*.spec.js"
             ]
         },
 
         // Concatenation
-        concat     : {
-            dist : {
-                files : {
-                    '<%= builddir %>/ovh-angular-toggleClass.js' : [
-                        '<%=srcdir%>/ovh-angular-toggleClass.js',
-                        '<%=srcdir%>/ovh-angular-toggleClass.directive.js'
+        concat: {
+            dist: {
+                files: {
+                    "<%= builddir %>/ovh-angular-toggleClass.js": [
+                        "<%=srcdir%>/ovh-angular-toggleClass.js",
+                        "<%=srcdir%>/ovh-angular-toggleClass.directive.js"
                     ]
                 }
             }
         },
 
         // Check complexity
-        complexity : {
-            generic : {
-                src     : [
-                    '<%=srcdir%>/*.js',
-                    '<%=srcdir%>/*/*.js'
+        complexity: {
+            generic: {
+                src: [
+                    "<%=srcdir%>/*.js",
+                    "<%=srcdir%>/*/*.js"
                 ],
-                options : {
-                    errorsOnly      : false,
-                    cyclomatic      : 12,
-                    halstead        : 45,
-                    maintainability : 82
+                options: {
+                    errorsOnly: false,
+                    cyclomatic: 12,
+                    halstead: 45,
+                    maintainability: 82
                 }
             }
         },
 
-        // To release
-        bump       : {
-            options : {
-                pushTo        : 'origin',
-                files         : [
-                    'package.json',
-                    'bower.json'
-                ],
-                updateConfigs : ['pkg', 'bower'],
-                commitFiles   : ['-a']
+        // Testing
+        karma: {
+            unit: {
+                configFile: "karma.conf.js",
+                singleRun: true
             }
+        },
+
+        // To release
+        bump: {
+            options: {
+                pushTo: "origin",
+                files: [
+                    "package.json",
+                    "bower.json"
+                ],
+                updateConfigs: ["pkg", "bower"],
+                commitFiles: ["-a"]
+            }
+        },
+
+        ngdocs: {
+            options: {
+                dest: "docs",
+                html5Mode: false,
+                title: "ovh-angular-toggleClass",
+                startPage: "/api/ovh-angular-toggleClass.directive:ovh-angular-toggleClass",
+                sourceLink: "https://github.com/ovh-ux/ovh-angular-toggleClass/blob/master/{{file}}#L{{codeline}}"
+            },
+            api: {
+                src: ["<%=srcdir%>/**/*.js"],
+                title: "api"
+            }
+        },
+
+        eslint: {
+            options: {
+                configFile: "./.eslintrc.json"
+            },
+            target: ["src/**/!(*.spec|*.integration).js", "Gruntfile.js", "karma.conf.js"]
         }
+
     });
 
     grunt.registerTask("default", ["build"]);
@@ -112,15 +150,19 @@ module.exports = function (grunt) {
         grunt.task.run([
             "clean",
             "jshint",
-            "complexity"
+            "eslint",
+            "complexity",
+            "karma"
         ]);
     });
 
     grunt.registerTask("build", [
         "clean",
         "concat",
+        "ngAnnotate",
         "uglify",
-        "copy:dist"
+        "copy:dist",
+        "ngdocs"
     ]);
 
     // Increase version number. Type = minor|major|patch
