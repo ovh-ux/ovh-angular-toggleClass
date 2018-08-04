@@ -10,7 +10,8 @@ NG_DOCS={
       "type": "directive",
       "moduleName": "ovh-angular-toggleClass",
       "shortDescription": "To use ovh-angular-toggleClass, you had to inject ovh-angular-toggleClass as dependency and use it like this example inside a controller",
-      "keywords": "angular api auto click close code controller dependency description directive ea element event example execute group html inject inside module myapp open ovh-angular-toggleclass remove slide string targer toggleclassclick toggleclassgroup toggleclassname toggleclassside toggleclasstarget toggleclasstargetbackdrop toggleclasstargetitem toggleclasstriggerclose toggleclasstriggeropencloseevent trigger true"
+      "keywords": "angular api auto click close code controller dependency description directive ea element event example execute group html inject inside module myapp open ovh-angular-toggleclass remove slide string targer toggleclassclick toggleclassgroup toggleclassname toggleclassside toggleclasstarget toggleclasstargetbackdrop toggleclasstargetitem toggleclasstriggerclose toggleclasstriggeropencloseevent trigger true",
+      "isDeprecated": false
     }
   ],
   "apis": {
